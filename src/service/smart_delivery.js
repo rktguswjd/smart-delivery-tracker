@@ -13,17 +13,17 @@ class SmartDelivery {
             this.getRequestOptions
         );
         const result = await response.json();
-        return result;
+        return result.Company;
     }
 
-    async tracking() {
-        const response = await fetch(
-            `http://info.sweettracker.co.kr/api/v1/trackingInfo?t_code=06&t_invoice=93549899155&t_key=${this.key}`,
-            this.getRequestOptions
-        );
-        const result = await response.json();
-        return result;
-    }
+    // async tracking() {
+    //     const response = await fetch(
+    //         `http://info.sweettracker.co.kr/api/v1/trackingInfo?t_code=06&t_invoice=93549899155&t_key=${this.key}`,
+    //         this.getRequestOptions
+    //     );
+    //     const result = await response.json();
+    //     return result;
+    // }
 }
 
 export default SmartDelivery;
