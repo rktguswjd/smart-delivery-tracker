@@ -25,6 +25,7 @@ const DeliveryAddForm = ({ company, onAdd }) => {
                         ]}
                     >
                         <Select
+                            size="large"
                             style={{ width: "15%" }}
                             placeholder="택배사 선택"
                         >
@@ -42,6 +43,7 @@ const DeliveryAddForm = ({ company, onAdd }) => {
                     </Form.Item>
                     <Form.Item
                         name={["운송장번호"]}
+                        label="number"
                         noStyle
                         rules={[
                             {
@@ -51,11 +53,16 @@ const DeliveryAddForm = ({ company, onAdd }) => {
                         ]}
                     >
                         <Input
+                            size="large"
                             style={{ width: "30%" }}
                             placeholder="운송장 번호 - 없이 입력"
                         />
                     </Form.Item>
-                    <Button icon={<SearchOutlined />} htmlType="submit" />
+                    <Button
+                        size="large"
+                        icon={<SearchOutlined />}
+                        htmlType="submit"
+                    />
                 </Input.Group>
             </Form.Item>
         </Form>
