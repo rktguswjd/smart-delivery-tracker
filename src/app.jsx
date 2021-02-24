@@ -12,26 +12,25 @@ function App({ smartDelivery }) {
 
     const saveStorage = () => {
         window.localStorage.setItem("info", JSON.stringify(deliveryInfo));
-        let log = window.localStorage.getItem("info");
-        console.log(log);
     };
 
     const onAdd = (values) => {
         const companyCode = values.택배사;
         const waybillNumber = values.운송장번호;
-        setDeliveryInfo((info) => [...info, { companyCode, waybillNumber }]);
+
+        smartDelivery.tracking(companyCode, waybillNumber).then((result) => {
+            if (!result.invoiceNo) {
+                return console.log("실패");
+            }
+            setDeliveryInfo((info) => [...info, { companyCode, result }]);
+        });
     };
 
     useEffect(() => {
         smartDelivery.company().then((result) => setCompanies(result));
         saveStorage();
-
-        // smartDelivery
-        //     .tracking()
-        //     .then((result) => console.log(result))
-        //     .catch((error) => console.log("error", error));
-    }, []);
-
+    }, [deliveryInfo]);
+    console.log(deliveryInfo);
     return (
         <div className={styles.app}>
             <title>DeliveryTracker</title>
@@ -43,10 +42,11 @@ function App({ smartDelivery }) {
             <div className={styles.add}>
                 <DeliveryAddForm company={companies} onAdd={onAdd} />
             </div>
-            {}
+
             {deliveryInfo.length === 0 ? null : (
                 <DeliveryList infomation={deliveryInfo} />
             )}
+
             <footer />
         </div>
     );
