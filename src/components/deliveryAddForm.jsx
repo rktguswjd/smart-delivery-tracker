@@ -1,71 +1,56 @@
 import React, { useRef } from "react";
-import { Input, Select, Button, Form } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
-const { Option } = Select;
+import styles from "./deliveryAddForm.module.css";
 
 const DeliveryAddForm = ({ company, onAdd }) => {
-    const formRef = useRef();
-    const onFinish = (values) => {
+    const inputRef = useRef();
+    const selectRef = useRef();
+
+    const onSubmit = (event) => {
+        event.preventDefault();
+        const values = {
+            택배사: selectRef.current.value,
+            운송장번호: inputRef.current.value,
+        };
         onAdd(values);
-        formRef.current.resetFields();
+        inputRef.current.value = "";
+        selectRef.current.value = "def";
     };
 
     return (
-        <Form onFinish={onFinish} ref={formRef}>
-            <Form.Item>
-                <Input.Group compact>
-                    <Form.Item
-                        name={["택배사"]}
-                        noStyle
-                        rules={[
-                            {
-                                required: true,
-                                message: "택배사를 선택해주세요.",
-                            },
-                        ]}
-                    >
-                        <Select
-                            size="large"
-                            style={{ width: "15%" }}
-                            placeholder="택배사 선택"
-                        >
-                            {company.map((company) => {
-                                return (
-                                    <Option
-                                        key={company.Code}
-                                        value={company.Code}
-                                    >
-                                        {company.Name}
-                                    </Option>
-                                );
-                            })}
-                        </Select>
-                    </Form.Item>
-                    <Form.Item
-                        name={["운송장번호"]}
-                        label="number"
-                        noStyle
-                        rules={[
-                            {
-                                required: true,
-                                message: "운송장 번호를 입력하세요.",
-                            },
-                        ]}
-                    >
-                        <Input
-                            size="large"
-                            style={{ width: "30%" }}
-                            placeholder="운송장 번호 - 없이 입력"
-                        />
-                    </Form.Item>
-                    <Button
-                        size="large"
-                        icon={<SearchOutlined />}
-                        htmlType="submit"
+        <div className={styles.add}>
+            <form onSubmit={onSubmit}>
+                <select
+                    className={styles.select}
+                    defaultValue="def"
+                    ref={selectRef}
+                >
+                    {" "}
+                    <option value="def" disabled>
+                        택배사 선택
+                    </option>
+                    {company.map((company) => {
+                        return (
+                            <option key={company.Code} value={company.Code}>
+                                {company.Name}
+                            </option>
+                        );
+                    })}
+                </select>
+                <input
+                    ref={inputRef}
+                    className={styles.input}
+                    placeholder="운송장 번호 - 없이 입력"
+                />
+
+                <button className={styles.button} size="large" type="submit">
+                    <SearchOutlined
+                        twoToneColor="black"
+                        style={{ fontSize: "1.5em" }}
                     />
-                </Input.Group>
-            </Form.Item>
-        </Form>
+                </button>
+            </form>
+        </div>
     );
 };
 

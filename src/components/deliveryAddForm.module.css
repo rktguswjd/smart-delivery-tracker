@@ -1,0 +1,66 @@
+input:focus,
+select:focus,
+option:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.add {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.select {
+    border-radius: 20px 0 0 20px;
+    text-align-last: center;
+    position: relative;
+    background-color: #f5f5f5;
+    border: 1px solid #f5f5f5;
+    align-items: center;
+    width: 15em;
+    height: 4em;
+    line-height: 4;
+    cursor: inherit;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.input {
+    background-color: #f5f5f5;
+    border: 1px solid #f5f5f5;
+    width: 25em;
+    height: 4em;
+    text-align: center;
+}
+
+.button {
+    border-radius: 0 20px 20px 0;
+    padding: auto;
+    cursor: pointer;
+    color: black;
+    background-color: #fbdb82;
+    border: 1px solid #fbdb82;
+    border-color: #fbdb82;
+    width: 8em;
+    height: 4em;
+}
+
+.select option {
+    font-size: 1.1em;
+    background-color: #fffde7;
+}
+
+.button :focus {
+    color: #757575;
+    background-color: #fbdb82;
+    border-color: #fbdb82;
+}
+.button :hover {
+    color: #757575;
+    background-color: #fbdb82;
+    border-color: #fbdb82;
+}

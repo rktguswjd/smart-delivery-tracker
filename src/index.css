@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap");
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
@@ -10,4 +12,19 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
         monospace;
+}
+
+@font-face {
+    font-family: "Gotham Rounded";
+    src: url("//db.onlinewebfonts.com/t/ae8f19f441b335c3fda30febf5069c5a.eot");
+    src: url("//db.onlinewebfonts.com/t/ae8f19f441b335c3fda30febf5069c5a.eot?#iefix")
+            format("embedded-opentype"),
+        url("//db.onlinewebfonts.com/t/ae8f19f441b335c3fda30febf5069c5a.woff2")
+            format("woff2"),
+        url("//db.onlinewebfonts.com/t/ae8f19f441b335c3fda30febf5069c5a.woff")
+            format("woff"),
+        url("//db.onlinewebfonts.com/t/ae8f19f441b335c3fda30febf5069c5a.ttf")
+            format("truetype"),
+        url("//db.onlinewebfonts.com/t/ae8f19f441b335c3fda30febf5069c5a.svg#Gotham Rounded")
+            format("svg");
 }
