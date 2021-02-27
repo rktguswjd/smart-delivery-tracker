@@ -18,38 +18,44 @@ const DeliveryAddForm = ({ company, onAdd }) => {
     };
 
     return (
-        <div className={styles.add}>
-            <form onSubmit={onSubmit}>
-                <select
-                    className={styles.select}
-                    defaultValue="def"
-                    ref={selectRef}
-                >
-                    {" "}
-                    <option value="def" disabled>
-                        택배사 선택
-                    </option>
-                    {company.map((company) => {
-                        return (
-                            <option key={company.Code} value={company.Code}>
-                                {company.Name}
-                            </option>
-                        );
-                    })}
-                </select>
-                <input
-                    ref={inputRef}
-                    className={styles.input}
-                    placeholder="운송장 번호 - 없이 입력"
-                />
-
-                <button className={styles.button} size="large" type="submit">
-                    <SearchOutlined
-                        twoToneColor="black"
-                        style={{ fontSize: "1.5em" }}
+        <div className={styles.container}>
+            <div className={styles.add}>
+                <form onSubmit={onSubmit}>
+                    <select
+                        className={styles.select}
+                        defaultValue="def"
+                        ref={selectRef}
+                    >
+                        {" "}
+                        <option value="def" disabled>
+                            택배사 선택
+                        </option>
+                        {company.map((company) => {
+                            return (
+                                <option key={company.Code} value={company.Code}>
+                                    {company.Name}
+                                </option>
+                            );
+                        })}
+                    </select>
+                    <input
+                        ref={inputRef}
+                        className={styles.input}
+                        placeholder="운송장 번호 - 없이 입력"
                     />
-                </button>
-            </form>
+
+                    <button
+                        className={styles.button}
+                        size="large"
+                        type="submit"
+                    >
+                        <SearchOutlined
+                            twoToneColor="black"
+                            style={{ fontSize: "1.5em" }}
+                        />
+                    </button>
+                </form>
+            </div>
         </div>
     );
 };

@@ -27,11 +27,20 @@ function App({ smartDelivery }) {
         });
     };
 
+    const onDelete = (infomation) => {
+        setDeliveryInfo((info) =>
+            info.filter(
+                (item) => item.result.invoiceNo !== infomation.result.invoiceNo
+            )
+        );
+    };
+
     useEffect(() => {
         smartDelivery.company().then((result) => setCompanies(result));
         saveStorage();
     }, [deliveryInfo]);
     console.log(deliveryInfo);
+
     return (
         <div className={styles.app}>
             <title>DeliveryTracker</title>
@@ -46,7 +55,7 @@ function App({ smartDelivery }) {
             <DeliveryAddForm company={companies} onAdd={onAdd} />
 
             {deliveryInfo.length === 0 ? null : (
-                <DeliveryList infomation={deliveryInfo} />
+                <DeliveryList infomation={deliveryInfo} onDelete={onDelete} />
             )}
 
             <footer />

@@ -1,14 +1,16 @@
-.info {
-    background-color: white;
-    width: 50%;
-    border: none;
-    border-radius: 20px;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
 .space_align_container {
     display: flex;
     flex-wrap: wrap;
-    align-item: flex-start;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px 0 30px;
 }
 .space_align_block {
     flex: none;
@@ -21,4 +23,47 @@
     display: inline-block;
     padding: 32px 8px 16px;
     text-align: center;
+}
+
+.arrow_box {
+    position: relative;
+    background: #4666e9;
+    border: 2px solid #4666e9;
+    margin-top: -200px;
+    margin-left: 8px;
+    width: 50px;
+    border-radius: 4px;
+    text-align: center;
+}
+.arrow_box:after,
+.arrow_box:before {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.arrow_box:after {
+    border-color: rgba(136, 183, 213, 0);
+    border-right-color: #4666e9;
+    border-width: 6px;
+    margin-top: -6px;
+}
+.arrow_box:before {
+    border-color: rgba(194, 225, 245, 0);
+    border-right-color: #4666e9;
+    border-width: 6px;
+    margin-top: -6px;
+}
+
+.state {
+    color: white;
+    text-align: center;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
