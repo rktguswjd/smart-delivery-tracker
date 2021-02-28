@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { message, Layout } from "antd";
+import { message } from "antd";
 import styles from "./app.module.css";
 import DeliveryAddForm from "./components/deliveryAddForm/deliveryAddForm";
 import DeliveryList from "./components/hooks/deliveryList";
 import BackTopBtn from "./components/hooks/backTopBtn";
 import Header from "./components/header/header";
+import Footer from "./components/footer/footer";
 
 function App({ smartDelivery }) {
     const [companies, setCompanies] = useState([]);
@@ -64,6 +65,7 @@ function App({ smartDelivery }) {
             {deliveryInfo.length === 0 ? null : (
                 <DeliveryList infomation={deliveryInfo} onDelete={onDelete} />
             )}
+            <Footer />
             <BackTopBtn />
         </div>
     );
