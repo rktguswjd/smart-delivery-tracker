@@ -3,8 +3,8 @@ import { Collapse, Card, Popconfirm } from "antd";
 import { CloseCircleTwoTone } from "@ant-design/icons";
 import styles from "./deliveryItem.module.css";
 import styled from "styled-components";
-import TimeLine from "./timeLine";
-import LevelState from "./levelState";
+import TimeLine from "../hooks/timeLine";
+import LevelState from "../levelState/levelState";
 
 const { Panel } = Collapse;
 const StyledCard = styled(Card)`

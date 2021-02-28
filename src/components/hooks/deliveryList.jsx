@@ -1,5 +1,5 @@
 import React from "react";
-import DeliveryItem from "./deliveryItem";
+import DeliveryItem from "../deliveryItem/deliveryItem";
 
 const DeliveryList = ({ infomation, onDelete }) => {
     return infomation.map((info) => {

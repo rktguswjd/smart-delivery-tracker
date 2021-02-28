@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Space, Divider, Tag } from "antd";
 import styles from "./levelState.module.css";
-import styled from "styled-components";
 
 const LevelState = ({ level }) => {
     const incomplete = "default";

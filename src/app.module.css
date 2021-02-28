@@ -4,24 +4,6 @@
     text-align: center;
 }
 
-header {
-    height: 170px;
-    width: 90%;
-    top: 0;
-    bottom: 0;
-    margin: 0 auto;
-}
-
-.title {
-    font-family: "Gotham Rounded";
-    font-size: 2em;
-    width: 100%;
-    margin: 0 auto;
-    color: #1121f2;
-    line-height: 170px;
-    padding: 0 70px 0 70px;
-}
-
 .container {
     width: 100%;
     display: flex;

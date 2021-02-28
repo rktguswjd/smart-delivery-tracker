@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { message, Layout } from "antd";
 import styles from "./app.module.css";
-import DeliveryAddForm from "./components/deliveryAddForm";
-import DeliveryList from "./components/deliveryList";
-import { message } from "antd";
+import DeliveryAddForm from "./components/deliveryAddForm/deliveryAddForm";
+import DeliveryList from "./components/hooks/deliveryList";
+import BackTopBtn from "./components/hooks/backTopBtn";
+import Header from "./components/header/header";
 
 function App({ smartDelivery }) {
-    // const INFO = "info";
     const [companies, setCompanies] = useState([]);
     const [deliveryInfo, setDeliveryInfo] = useState(
         () => JSON.parse(window.localStorage.getItem("info")) || []
@@ -52,9 +53,7 @@ function App({ smartDelivery }) {
     return (
         <div className={styles.app}>
             <title>DeliveryTracker</title>
-            <header className={styles.header}>
-                <p className={styles.title}>smart :D</p>
-            </header>
+            <Header />
 
             <div className={styles.container}>
                 <p className={styles.p}>모든 배송을 한눈에 확인해 보세요.</p>
@@ -65,8 +64,7 @@ function App({ smartDelivery }) {
             {deliveryInfo.length === 0 ? null : (
                 <DeliveryList infomation={deliveryInfo} onDelete={onDelete} />
             )}
-
-            <footer />
+            <BackTopBtn />
         </div>
     );
 }
