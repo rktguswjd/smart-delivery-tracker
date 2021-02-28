@@ -17,7 +17,7 @@ header {
     font-size: 2em;
     width: 100%;
     margin: 0 auto;
-    color: #4666e9;
+    color: #1121f2;
     line-height: 170px;
     padding: 0 70px 0 70px;
 }
@@ -31,6 +31,6 @@ header {
 }
 
 .p {
-    font-family: "Noto Sans KR", sans-serif;
+    font-family: "Noto Sans KR 700";
     font-size: 2.5em;
 }

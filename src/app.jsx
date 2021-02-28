@@ -19,6 +19,14 @@ function App({ smartDelivery }) {
         const companyCode = values.택배사;
         const waybillNumber = values.운송장번호;
 
+        const exists = deliveryInfo.find(
+            (p) => p.result.invoiceNo === waybillNumber
+        );
+        if (exists) {
+            message.warning("이미 등록된 운송장 번호가 있습니다.");
+            return;
+        }
+
         smartDelivery.tracking(companyCode, waybillNumber).then((result) => {
             if (!result.invoiceNo) {
                 return message.warning(`${result.msg}`);

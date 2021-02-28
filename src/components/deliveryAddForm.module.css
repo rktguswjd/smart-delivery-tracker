@@ -11,6 +11,8 @@ button:focus {
     justify-content: center;
     align-items: center;
     width: 100%;
+    font-family: "Noto Sans KR 300";
+    font-size: 15px;
 }
 
 .add {
