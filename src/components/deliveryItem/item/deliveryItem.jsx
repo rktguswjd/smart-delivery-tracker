@@ -51,6 +51,7 @@ const DeliveryItem = ({ infomation, onDelete }) => {
                     </Collapse>
                 </div>
             </StyledCard>
+
             <div className={styles.conversation}>
                 <div className={styles.messages_received}>
                     <div

@@ -12,6 +12,7 @@ const LevelState = ({ level }) => {
             <span className={styles.step_block}>
                 <img
                     src="https://img.icons8.com/fluent/44/000000/box.png"
+                    alt="상품인수"
                     style={{ margin: "5px" }}
                 />
                 <Tag
@@ -30,6 +31,7 @@ const LevelState = ({ level }) => {
             <span className={styles.step_block}>
                 <img
                     src="https://img.icons8.com/fluent/44/000000/truck.png"
+                    alt="상품이동중"
                     style={{ margin: "5px" }}
                 />
                 <Tag
@@ -48,6 +50,7 @@ const LevelState = ({ level }) => {
             <span className={styles.step_block}>
                 <img
                     src="https://img.icons8.com/fluent/44/000000/garage-closed.png"
+                    alt="배송지도착"
                     style={{ margin: "5px" }}
                 />
                 <Tag
@@ -65,6 +68,7 @@ const LevelState = ({ level }) => {
             <span className={styles.step_block}>
                 <img
                     src="https://img.icons8.com/fluent/44/000000/in-transit.png"
+                    alt="배송출발"
                     style={{ margin: "5px" }}
                 />
                 <Tag
@@ -82,6 +86,7 @@ const LevelState = ({ level }) => {
             <span className={styles.step_block}>
                 <img
                     src="https://img.icons8.com/fluent/44/000000/delivered-box.png"
+                    alt="배송완료"
                     style={{ margin: "5px" }}
                 />
                 <Tag

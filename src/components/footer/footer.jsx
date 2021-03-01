@@ -1,12 +1,12 @@
-import React from "react";
+import React, { memo } from "react";
 import { GithubOutlined } from "@ant-design/icons";
 import styles from "./footer.module.css";
 
-const Footer = () => {
+const Footer = memo(() => {
     return (
         <footer className={styles.footer}>
             <p className={styles.text_center}>
-                Copyright @2020 | Designed With by <a href="#">rktguswjd</a>
+                Copyright @2020 | Designed With by <a href="/">rktguswjd</a>
             </p>
 
             <ul className={styles.social_footer_ul}>
@@ -20,6 +20,6 @@ const Footer = () => {
             </ul>
         </footer>
     );
-};
+});
 
 export default Footer;
