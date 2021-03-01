@@ -1,3 +1,11 @@
+.app {
+    min-height: 100%;
+    width: 100%;
+    position: absolute;
+    margin: 0;
+    padding-bottom: 130px; /* footer height */
+}
+
 .add {
     text-align: center;
 }

@@ -11,7 +11,7 @@ const LevelState = ({ level }) => {
         <Space split={<Divider type="vertical" />}>
             <span className={styles.step_block}>
                 <img
-                    src="https://img.icons8.com/fluent/48/000000/box.png"
+                    src="https://img.icons8.com/fluent/44/000000/box.png"
                     style={{ margin: "5px" }}
                 />
                 <Tag
@@ -29,7 +29,7 @@ const LevelState = ({ level }) => {
 
             <span className={styles.step_block}>
                 <img
-                    src="https://img.icons8.com/fluent/48/000000/truck.png"
+                    src="https://img.icons8.com/fluent/44/000000/truck.png"
                     style={{ margin: "5px" }}
                 />
                 <Tag
@@ -47,7 +47,7 @@ const LevelState = ({ level }) => {
 
             <span className={styles.step_block}>
                 <img
-                    src="https://img.icons8.com/fluent/48/000000/garage-closed.png"
+                    src="https://img.icons8.com/fluent/44/000000/garage-closed.png"
                     style={{ margin: "5px" }}
                 />
                 <Tag
@@ -64,7 +64,7 @@ const LevelState = ({ level }) => {
             </span>
             <span className={styles.step_block}>
                 <img
-                    src="https://img.icons8.com/fluent/48/000000/in-transit.png"
+                    src="https://img.icons8.com/fluent/44/000000/in-transit.png"
                     style={{ margin: "5px" }}
                 />
                 <Tag
@@ -81,7 +81,7 @@ const LevelState = ({ level }) => {
             </span>
             <span className={styles.step_block}>
                 <img
-                    src="https://img.icons8.com/fluent/48/000000/delivered-box.png"
+                    src="https://img.icons8.com/fluent/44/000000/delivered-box.png"
                     style={{ margin: "5px" }}
                 />
                 <Tag

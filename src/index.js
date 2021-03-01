@@ -7,8 +7,6 @@ import SmartDelivery from "./service/smart_delivery";
 const smartDelivery = new SmartDelivery(process.env.REACT_APP_DELIVERY_API_KEY);
 
 ReactDOM.render(
-    <React.StrictMode>
-        <App smartDelivery={smartDelivery} />
-    </React.StrictMode>,
+    <App smartDelivery={smartDelivery} />,
     document.getElementById("root")
 );

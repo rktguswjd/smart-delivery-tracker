@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { message } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import styles from "./deliveryAddForm.module.css";
 
@@ -8,8 +9,20 @@ const DeliveryAddForm = ({ company, onAdd }) => {
 
     const onSubmit = (event) => {
         event.preventDefault();
+        if (
+            selectRef.current.value === "def" ||
+            inputRef.current.value === ""
+        ) {
+            return message.warning(
+                "택배사와 운송장 번호를 정확히 입력해주세요."
+            );
+        }
+        const getCompany = company.find(
+            (p) => p.Code === selectRef.current.value
+        );
         const values = {
-            택배사: selectRef.current.value,
+            택배사: getCompany.Name,
+            택배사코드: getCompany.Code,
             운송장번호: inputRef.current.value,
         };
         onAdd(values);

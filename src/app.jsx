@@ -18,7 +18,8 @@ function App({ smartDelivery }) {
     };
 
     const onAdd = (values) => {
-        const companyCode = values.택배사;
+        const companyName = values.택배사;
+        const companyCode = values.택배사코드;
         const waybillNumber = values.운송장번호;
 
         const exists = deliveryInfo.find(
@@ -30,10 +31,15 @@ function App({ smartDelivery }) {
         }
 
         smartDelivery.tracking(companyCode, waybillNumber).then((result) => {
-            if (!result.invoiceNo) {
-                return message.warning(`${result.msg}`);
+            if (result.status === false || result.result === "N") {
+                return message.warning(
+                    "유효하지 않은 운송장번호 이거나 택배사 코드 입니다."
+                );
             }
-            setDeliveryInfo((info) => [...info, { companyCode, result }]);
+            setDeliveryInfo((info) => [
+                ...info,
+                { companyCode, companyName, result },
+            ]);
         });
     };
 
