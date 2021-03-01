@@ -8,13 +8,15 @@
     color: #8b949e;
     text-align: center;
 }
+
 .social_footer_ul {
     display: table;
     margin: 15px auto 0 auto;
+    padding-inline-start: 0px;
     list-style-type: none;
+    text-align: center;
 }
 .social_footer_ul li {
-    padding-left: 20px;
-    padding-top: 10px;
     float: left;
+    text-align: center;
 }

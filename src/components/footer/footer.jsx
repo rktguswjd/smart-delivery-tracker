@@ -8,6 +8,7 @@ const Footer = () => {
             <p className={styles.text_center}>
                 Copyright @2020 | Designed With by <a href="#">rktguswjd</a>
             </p>
+
             <ul className={styles.social_footer_ul}>
                 <li>
                     <a href="https://github.com/rktguswjd">

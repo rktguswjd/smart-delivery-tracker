@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { message } from "antd";
+import Home from "./routes/Home";
 import styles from "./app.module.css";
-import DeliveryAddForm from "./components/deliveryAddForm/deliveryAddForm";
-import DeliveryList from "./components/hooks/deliveryList";
-import BackTopBtn from "./components/hooks/backTopBtn";
-import Header from "./components/header/header";
-import Footer from "./components/footer/footer";
+import { Link, Route, BrowserRouter as Router } from "react-router-dom";
 
 function App({ smartDelivery }) {
     const [companies, setCompanies] = useState([]);
@@ -55,25 +52,29 @@ function App({ smartDelivery }) {
         smartDelivery.company().then((result) => setCompanies(result));
         saveStorage();
     }, [deliveryInfo]);
-    console.log(deliveryInfo);
 
     return (
-        <div className={styles.app}>
-            <title>DeliveryTracker</title>
-            <Header />
+        <Router>
+            <div className={styles.app}>
+                <title>DeliveryTracker</title>
 
-            <div className={styles.container}>
-                <p className={styles.p}>모든 배송을 한눈에 확인해 보세요.</p>
+                <header className={styles.header}>
+                    <Link to="/">
+                        <p className={styles.title}>smart :D</p>
+                    </Link>
+                </header>
+                <main>
+                    <Route exact path="/">
+                        <Home
+                            companies={companies}
+                            deliveryInfo={deliveryInfo}
+                            onAdd={onAdd}
+                            onDelete={onDelete}
+                        />
+                    </Route>
+                </main>
             </div>
-
-            <DeliveryAddForm company={companies} onAdd={onAdd} />
-
-            {deliveryInfo.length === 0 ? null : (
-                <DeliveryList infomation={deliveryInfo} onDelete={onDelete} />
-            )}
-            <Footer />
-            <BackTopBtn />
-        </div>
+        </Router>
     );
 }
 
