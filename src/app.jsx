@@ -61,8 +61,6 @@ function App({ smartDelivery }) {
     return (
         <Router>
             <div className={styles.app}>
-                <title>DeliveryTracker</title>
-
                 <header className={styles.header}>
                     <Link to="/">
                         <div className={styles.title}>smart :D</div>

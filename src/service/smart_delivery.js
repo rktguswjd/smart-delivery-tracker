@@ -9,7 +9,7 @@ class SmartDelivery {
 
     async company() {
         const response = await fetch(
-            `http://info.sweettracker.co.kr/api/v1/companylist?t_key=${this.key}`,
+            `https://info.sweettracker.co.kr/api/v1/companylist?t_key=${this.key}`,
             this.getRequestOptions
         );
         const result = await response.json();
@@ -18,11 +18,10 @@ class SmartDelivery {
 
     async tracking(companyCode, waybillNumber) {
         const response = await fetch(
-            `http://info.sweettracker.co.kr/api/v1/trackingInfo?t_code=${companyCode}&t_invoice=${waybillNumber}&t_key=${this.key}`,
+            `https://info.sweettracker.co.kr/api/v1/trackingInfo?t_code=${companyCode}&t_invoice=${waybillNumber}&t_key=${this.key}`,
             this.getRequestOptions
         );
         const result = await response.json();
-        console.log(result);
         return result;
     }
 }
