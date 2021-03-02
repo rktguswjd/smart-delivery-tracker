@@ -3,8 +3,8 @@ import { Space, Divider, Tag } from "antd";
 import styles from "./levelState.module.css";
 
 const LevelState = ({ level }) => {
-    const incomplete = "default";
-    const complete = "green";
+    const incomplete = "green";
+    const complete = "default";
     const progress = "blue";
 
     return (

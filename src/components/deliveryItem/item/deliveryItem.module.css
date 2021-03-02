@@ -1,3 +1,9 @@
+.company_title,
+.invoice_title,
+.name_title {
+    font-family: "Poppins", sans-serif;
+}
+
 .container {
     display: flex;
     position: relative;
@@ -6,18 +12,82 @@
     width: 100%;
 }
 
+.basic_info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-family: "Noto Sans KR 300";
+    font-size: 12px;
+}
+
+.item_name {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: #e1f5fe;
+    color: #1121f2;
+    padding: 3px;
+    border-radius: 5px 5px 0 0;
+}
+.name {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.delete {
+    text-align: center;
+    justify-content: center;
+    float: right;
+}
+.company_invoice {
+    margin-bottom: 5px;
+    text-align: center;
+}
+.company {
+    display: flex;
+}
+
+.company_title {
+    color: black;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px 0 0 5px;
+}
+
+.company_name {
+    color: black;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 0 5px 5px 0;
+}
+.invoice {
+    display: flex;
+}
+
+.invoice_title {
+    color: black;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px 0 0 5px;
+}
+
+.invoice_number {
+    color: black;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 0 5px 5px 0;
+}
+
 .space_align_container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 0 15px 0 15px;
+    margin-top: 15px;
 }
 
 .space_align_block {
     flex: none;
-    margin: 8px 4px;
-    padding: 4px;
     border: none;
 }
 
@@ -25,6 +95,7 @@
     position: absolute;
     margin-bottom: 10px;
     margin-left: 3px;
+    margin-top: 25px;
 }
 
 .message_blue {
